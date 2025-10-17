@@ -375,3 +375,12 @@ body {
   background: #FFC63A;
   color: #5B392F;
 }
+
+.footer{
+  background:#5B392F;
+  color:#FFFFFF;
+  text-align:center;
+  padding:15px 0;
+  font-size:13px;
+  margin-top:60px;
+}
