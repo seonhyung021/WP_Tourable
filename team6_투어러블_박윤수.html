@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>자연-힐링여행 제주편</title>
+  <style>
+    html, body {
+      margin: 0; padding: 0; min-height: 100vh;
+      font-family: '맑은 고딕', 'Malgun Gothic', sans-serif;
+      background-color: #11271c;
+      color: #F5F1E9;
+    }
+    .main-title {
+      font-size: 23px;
+      font-weight: bold;
+      color: #FFFDF8;
+      text-shadow: 1px 1px 10px rgba(0,0,0,0.77);
+      letter-spacing: 0.02em;
+      margin: 0;
+      user-select: none;
+    }
+    .sub-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #F5F1E9;
+      margin-top: 9px;
+      margin-bottom: 0;
+      letter-spacing: 0.05em;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.28);
+    }
+    .detail-title {
+      font-size: 16px;
+      font-weight: bold;
+      color: #F5F1E9;
+      margin-top: 22px;
+      margin-bottom: 8px;
+      letter-spacing: 0.02em;
+    }
+    .detail-desc {
+      font-size: 15px;
+      color: #F5F1E9;
+      margin-top: 5px;
+      margin-bottom: 16px;
+      line-height: 1.54;
+      font-weight: 400;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.11);
+    }
+    /* hero : 상단 제주말사진+연그린 배경 */
+    .hero {
+      display: flex;
+      align-items: center;
+      height: 20vh;
+      min-height: 140px;
+      background:
+        linear-gradient(to bottom, #BCD8BBcc 70%, #BCD8BBcc 100%),
+        url('team6_jejumalsajin.jpg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding: 0 36px 0 0;
+      box-sizing: border-box;
+      position: relative;
+    }
+    .hero-text-group {
+      margin-left: auto;
+      text-align: right;
+      background: rgba(17, 39, 28, 0.36);
+      padding: 32px 25px 30px 35px;
+      border-radius: 0 0 24px 24px;
+      max-width: 520px;
+    }
+    /* 상단 nav 바 연한 그린 */
+    .nav-bar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #BCD8BB;
+      margin: 0;
+      border-bottom: none;
+    }
+    .nav-bar a {
+      color: #5B392F;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      padding: 14px 42px 14px 42px;
+      transition: background 0.2s, color 0.2s;
+      border-radius: 6px 6px 0 0;
+      margin: 0 2px;
+      letter-spacing: 0.08em;
+      text-align: center;
+      display: inline-block;
+      background: none;
+    }
+    .nav-bar a:hover {
+      background-color: #5B392F;
+      color: #F5F1E9;
+    }
+    /* 좌측 고정 바 (border 없음, 호버 효과 적용) */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 194px;
+      height: 100vh;
+      background: #26513f;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 130px;
+      z-index: 200;
+      gap: 16px;
+    }
+    .sidebar a, .sidebar button {
+      width: 158px;
+      margin: 0;
+      margin-bottom: 2px;
+      padding: 13px 0;
+      border-radius: 7px;
+      font-size: 1.08rem;
+      color: #F5F1E9;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.23s;
+      letter-spacing: 0.01em;
+      outline: none;
+      box-sizing: border-box;
+      border: 2px solid transparent;
+    }
+    .sidebar a:hover, .sidebar button:hover {
+      background: #F5F1E9 !important;      /* 아이보리 */
+      color: #5B392F !important;           /* 갈색 글씨 */
+      border: 2px solid #F5F1E9;           /* 아이보리 테두리 */
+    }
+    .container {
+      margin-left: 194px;
+      padding: 0;
+    }
+    .day-section {
+      background-color: #5B392F;
+      border-radius: 16px;
+      max-width: 600px;
+      margin: 38px auto 0 auto;
+      padding: 27px 21px 23px 22px;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.45);
+      color: #F5F1E9;
+      scroll-margin-top: 110px;
+    }
+    @media(max-width: 850px) {
+      .sidebar { display: none; }
+      .container { margin-left: 0;}
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <a href="https://map.naver.com/p/favorite/myPlace/folder/a79e187dd4654835b3830202fa1a6423/pc?c=13.00,0,0,0,dh" target="_blank">🏨 제주 숙소 추천</a>
+    <button onclick="scrollToDay('day1')">DAY 1 요약</button>
+    <button onclick="scrollToDay('day2')">DAY 2 요약</button>
+    <button onclick="scrollToDay('day3')">DAY 3 요약</button>
+  </div>
+  <div class="container">
+    <header class="hero">
+      <div class="hero-text-group">
+        <div class="main-title">자연-힐링여행 제주편</div>
+        <div class="sub-title">제주에서 만나는 원시 자연과 휴식</div>
+      </div>
+    </header>
+    <nav class="nav-bar">
+      <a href="#">메인</a>
+      <a href="#">시티</a>
+      <a href="#">힐링</a>
+      <a href="#">역사</a>
+    </nav>
+    <section class="day-section" id="day1">
+      <div class="detail-title">DAY 1</div>
+      <div class="detail-title">공항 · 협재 해변 · 숙소</div>
+      <div class="detail-desc">
+        제주공항 도착 후 숙소 체크인, 협재 해변 산책, 간단한 저녁 식사로 첫날을 시작합니다.
+      </div>
+      <img src="jeju_map_day1.jpg" alt="제주 1일차 지도" class="map-img"/>
+      <img src="jeju_sights1.jpg" alt="1일차 명소" class="place-img" />
+      <div class="detail-desc">렌터카로 공항 및 숙소 간 이동</div>
+    </section>
+    <section class="day-section" id="day2">
+      <div class="detail-title">DAY 2</div>
+      <div class="detail-title">삼다수숲 · 함덕해변 · 디저트</div>
+      <div class="detail-desc">
+        삼다수 숲길을 걸으며 피톤치드 힐링, 함덕해변 산책, 우무 본점에서 감성 디저트 경험.
+      </div>
+      <img src="jeju_map_day2.jpg" alt="제주 2일차 지도" class="map-img"/>
+      <img src="jeju_sights2.jpg" alt="2일차 명소" class="place-img" />
+      <div class="detail-desc">렌터카로 자유롭게 이동</div>
+    </section>
+    <section class="day-section" id="day3">
+      <div class="detail-title">DAY 3</div>
+      <div class="detail-title">오설록 · 금오름 · 귀환</div>
+      <div class="detail-desc">
+        오설록 티뮤지엄 탐방, 금오름 전망 산책 후 렌터카 반납 및 제주공항 귀환
+      </div>
+      <img src="jeju_map_day3.jpg" alt="제주 3일차 지도" class="map-img"/>
+      <img src="jeju_sights3.jpg" alt="3일차 명소" class="place-img" />
+      <div class="detail-desc">렌터카 반납 후 제주국제공항 이동</div>
+    </section>
+  </div>
+  <script>
+    function scrollToDay(day) {
+      var section = document.getElementById(day);
+      if (section) {
+        window.scrollTo({
+          top: section.getBoundingClientRect().top + window.scrollY - 40,
+          behavior: 'smooth'
+        });
+      }
+    }
+  </script>
+</body>
+</html>
+
+
+
