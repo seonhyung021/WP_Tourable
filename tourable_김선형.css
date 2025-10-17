@@ -203,11 +203,10 @@ html { scroll-behavior: smooth; }
   border-color: #1E3A5F;
 }
 
-/* 연결선(화살표)도 살짝 인터랙션 */
 .connector { border-top-color:#2b6cb0; transition: opacity .18s ease; }
 .connector:hover { opacity: .6; }
 
-/* ===== 소셜 영역 ===== */
+/*소셜 영역*/
 .social {
   max-width: 800px;
   background: #fff;
