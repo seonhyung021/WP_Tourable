@@ -208,7 +208,7 @@ html { scroll-behavior: smooth; }
 
 /*소셜 영역*/
 .social {
-  max-width: 800px;
+  max-width: 1000px;
   background: #fff;
   margin: 60px auto 40px;
   padding: 30px 40px;
