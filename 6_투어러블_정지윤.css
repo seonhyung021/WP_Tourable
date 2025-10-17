@@ -29,7 +29,7 @@ body {
 }
 
 .history-header-text h1 {
-  font-size: 25px;
+  font-size: 30px;
   margin: 0;
   font-weight: bold;
   color: #FFFFFF;
@@ -37,7 +37,7 @@ body {
 }
 
 .history-header-text p {
-  font-size: 16px;
+  font-size: 20px;
   margin-top: 8px;
   color: #FFFFFF;
   line-height: 1.5;
