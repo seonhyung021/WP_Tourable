@@ -15,79 +15,12 @@ h4 {
 p{
   font-size: 18px;
 }
-.header {
-  width: 100%;
-  height: 70px;                
-  background-color: #1E3A5F;   
-  display: flex;
-  justify-content: center;    
-  align-items: center;
-  position: relative;
-}
-
-.logo-img {
-  height: 250px;                
-  width: 270px;
-  background: none;          
-  border: none;
-  box-shadow: none;
-  filter: brightness(1.1);   
-}
-
-.logo-img:hover {
-  transform: scale(1.05);    
-}
-/*탭 네비*/
-.tab-nav{
-  display: flex;
-  justify-content: center;
-  gap: 100px;
-  margin-top: 30px;          
-}
-
-.tab{
-  display: inline-block;
-  width: 150px;
-  text-align: center;
-  padding: 14px 0;
-  background-color: #fff;
-  color: #1E3A5F;
-  text-decoration: none;
-  font-size: 20px;
-  font-weight: bold;
-}
-.tab:hover{
-  background: #1E3A5F;       
-  color: #fff;
-}
-
-.content{
-  position: relative;
-  margin-top: 0;
-}
-.content{
-  border-radius: 12px;
-}
-.sub-nav a:hover{
-  color:#FFD369;
-  border-bottom:3px solid #FFD369;
-}
-/*상단배경*/
-.hero img{
-  width:100%;
-  height:500px;
-  object-fit:cover;
-  display:block;
-  background-position: center top;
-  filter: saturate(1.05) contrast(1.02) brightness(.98);
-}
-/*hero 텍스트 오른쪽 상단 */
 .hero {
   position: relative;   
 }
 .hero-text {
   position: absolute;
-  top: 280px;             
+  top: 140px;             
   right: 100px;        
   color: #fff;       
   text-align: right;
@@ -109,7 +42,65 @@ p{
     0 2px 6px rgba(0, 0, 0, 0.6),    
     0 0 10px rgba(0, 0, 0, 0.3);
 }
-/*본문*/
+
+.theme-nav {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background-color: #1E3A5F;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.theme-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+.nav-link {
+  display: inline-block;
+  padding: 16px 40px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #FFC63A;
+  border-bottom: 3px solid #FFC63A;
+}
+.content{
+  position: relative;
+  margin-top: 0;
+}
+.content{
+  border-radius: 12px;
+}
+.sub-nav a:hover{
+  color:#FFD369;
+  border-bottom:3px solid #FFD369;
+}
+
+.hero img{
+  width:100%;
+  height:280px;
+  object-fit:cover;
+  display:block;
+  background-position: center top;
+  filter: saturate(1.05) contrast(1.02) brightness(.98);
+}
+
+
 .content{
   max-width: 1200px;
   background:#fff;
@@ -356,7 +347,7 @@ html { scroll-behavior: smooth; }
   padding: 8px 16px;
   font-size: 14px;
 }
-/*별 모양 고정 네비*/
+
 .side-nav.stars {
   position: fixed;
   top: 75%;
