@@ -208,8 +208,8 @@ hr.line {
 
 .healing-header-text {
   position: absolute;
-  top: 50%;
-  right: 200px;
+  top: 40%;
+  right: 100px;
   transform: translateY(-50%);
   text-align: right;
   background: rgba(34, 34, 34, 0.18);
@@ -218,18 +218,19 @@ hr.line {
 }
 
 .healing-header-text h1 {
-  font-size: 30px;
-  font-weight: bold;
+  font-size: 52px;
+  font-weight: 700;
   margin: 0;
   color: white;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6), 0 0 10px rgba(0, 0, 0, 0.3); 
 }
 
 .healing-header-text p {
-  font-size: 20px;
-  margin-top: 8px;
+  font-size: 30px;
+  font-weight: 700;
+  margin-top: 0px;
   color: white;
-  text-shadow: 1px 1px 7px rgba(0,0,0,0.25);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6), 0 0 10px rgba(0, 0, 0, 0.3); 
 }
 
 .theme-nav {
@@ -360,4 +361,5 @@ hr.line {
     padding: 10px 20px;
     font-size: 16px;
   }
+
 }
