@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>6_tourable_theme_running_suwon</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        header {
+            position: relative;
+            z-index: 0;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 260px;
+            background:
+                linear-gradient(
+                    to top left,
+                    rgba(30, 58, 95, 0.8) 0%,
+                    rgba(30, 58, 95, 0.4) 35%,
+                    rgba(30, 58, 95, 0) 80%
+                ),
+                url("https://upload.wikimedia.org/wikipedia/commons/7/7e/%EC%88%98%EC%9B%90_%ED%99%94%EC%84%B1%EC%9D%98_%EC%95%BC%EA%B2%BD-%EC%9E%A5%EC%95%88%EB%AC%B8.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: center;
+            padding-right: 40px;
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        .title-main {
+            font-family: sans-serif;
+            text-shadow: 0 2px 2px rgba(0,0,0,1);
+            font-size: 45px;
+            font-weight: 900;
+            margin-top: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .title-sub {
+            font-family: sans-serif;
+            text-shadow: 0 2px 2px rgba(0,0,0,1);
+            font-size: 36px;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+
+        .nav-top {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            background-color: #BCD8BB;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            padding: 10px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .nav-top a {
+            color: white;
+            padding: 14px;
+            text-decoration: none;
+        }
+
+        .nav-top a:hover {
+            background-color: #5B392F;
+            color: red;
+        }
+
+        .title-theme {
+            margin-top: 5px;
+            padding: 20px;
+        }
+
+        .course-header {
+            font-size: 30px;
+            text-align: center;
+            text-shadow: 0 2px 2px rgba(0,0,0,0.15);
+        }
+
+        .course-header h3 {
+            font-size: 17px;
+            text-align: center;
+        }
+
+        .article {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .content-area {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 10px;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            gap: 20px;
+            justify-content: left;
+        }
+
+        .link-card, .card {
+            background-color: #BCD8BB;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            width: 220px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .link-card img, .card-img {
+            height: 100px;
+            object-fit: cover;
+        }
+
+        .link-card:hover, .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .card-body {
+            padding: 15px;
+            flex: 1;
+        }
+
+        .card-body p {
+            font-family: sans-serif;
+            font-size: 14px;
+            color: #fff;
+            text-shadow: 0 2px 2px rgba(0,0,0,0.15);
+            line-height: 1.5;
+        }
+
+        .course-container {
+            display: flex;
+            flex: 1;
+            flex-wrap: wrap;
+            flex-direction: column;
+            background-color: #1e3a5f;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            font-family: sans-serif;
+            font-size: 0.98rem;
+            line-height: 1.6;
+            padding: 10px;
+            margin-bottom: 40px;
+            scroll-margin-top: 260px;
+        }
+
+        .title-1 {
+            font-family: sans-serif;
+            font-size: 25px;
+            font-weight: 500;
+            color: #fff;
+            text-shadow: 0 2px 2px rgba(0,0,0,0.15);
+            margin: 5px 10px;
+        }
+
+        .title-2 {
+            font-family: sans-serif;
+            font-size: 20px;
+            font-weight: 500;
+            color: #fff;
+            text-shadow: 0 2px 2px rgba(0,0,0,0.15);
+            margin: 5px 10px;
+        }
+
+        .content-text {
+            font-family: sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            color: #fff;
+            text-shadow: 0 2px 2px rgba(0,0,0,0.15);
+            margin: 5px 10px;
+            line-height: 1.5;
+        }
+
+        .course-card-container {
+            background-color: #F4E3B2;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            display: inline-block;
+            flex-direction: column;
+            margin: 10px;
+            gap: 10px;
+            justify-content: left;
+            align-items: left;
+        }
+
+        .img-container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            margin: 15px auto;
+            gap: 25px;
+            padding: 10px;
+        }
+
+        .course-card {
+            background-color: #BCD8BB;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            width: 180px;
+            height: 300px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .course-card img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+        }
+
+        .course-card-body {
+            padding: 10px;
+            background-color: #BCD8BB;
+            color: white;
+            text-align: left;
+        }
+
+        .course-card-body h4 {
+            margin: 5px 0;
+            font-size: 16px;
+            font-weight: 400;
+            text-shadow: 0 2px 2px rgba(0,0,0,0.15);
+        }
+
+        .course-card-body p {
+            font-size: 12px;
+            color: #000;
+            text-shadow: 0 2px 2px rgba(0,0,0,0.15);
+            line-height: 1.5;
+        }
+
+        .mini-img {
+            width: 250px;
+            height: auto;
+            border-radius: 8px;
+            margin: 15px 0 15px 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+        }
+
+        .hashtag-container {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        .hashtag {
+            background-color: white;
+            color: #1e3a5f;
+            border-radius: 8px;
+            padding: 4px 10px;
+            font-size: 11px;
+            font-weight: 600;
+            font-family: sans-serif;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+            transition: all 0.2s ease;
+        }
+
+        .hashtag:hover {
+            background-color: #5B392F;
+            color: white;
+            cursor: pointer;
+            transform: translateY(-2px);
+        }
+
+        .social {
+            max-width: 1000px;
+            background: #FFFFFF;
+            margin: 100px auto 40px;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            text-align: left;
+        }
+
+        .social h3 {
+            font-size: 20px;
+            color: #5B392F;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #EEEEEE;
+            padding-bottom: 6px;
+        }
+
+        .social-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .like-btn, .comment-btn {
+            background: #BCD8BB;
+            border: none;
+            border-radius: 8px;
+            padding: 8px 14px;
+            font-size: 15px;
+            font-weight: bold;
+            color: #5B392F;
+            cursor: pointer;
+        }
+
+        .like-btn:hover, .comment-btn:hover {
+            background: #F4E3B2;
+            color: #5B392F;
+        }
+
+        .comment-list {
+            background: #FFF8E7;
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #5B392F;
+        }
+
+        .comment-list p {
+            margin: 4px 0;
+        }
+
+        .comment-form textarea {
+            width: 100%;
+            height: 80px;
+            box-sizing: border-box;
+            border: 1.5px solid #CCCCCC;
+            border-radius: 8px;
+            padding: 8px 10px;
+            resize: none;
+            font-family: inherit;
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        .comment-form textarea:focus {
+            outline: none;
+            border-color: #5B392F;
+            box-shadow: 0 0 0 2px rgba(91,57,47,0.1);
+        }
+
+        .submit-btn {
+            background: #1e3a5f;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 8px;
+            padding: 8px 16px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background: #BCD8BB;
+            color: #5B392F;
+        }
+
+        .footer {
+            background: #1e3a5f;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 13px;
+            margin-top: 100px;
+        }
+    </style>
+    </head>
+    <body>
+        <header>
+            <div class="title-main">RUN IN SUWON</div>
+            <div class="title-sub">러닝 여행 수원 편</div>
+        </header>
+
+        <div class="nav-top">
+            <a href="#">메인</a>
+            <a href="#">시티</a>
+            <a href="#">힐링</a>
+            <a href="#">역사</a>
+        </div>
+
+        <div class="title-theme">
+            <div class="course-header">
+                <p><strong>🏃‍♂️ 달리면서 즐기는 수원 러닝 여행</strong></p>
+                <h3><hr>📍러닝 코스 3개 소개 | 경기도 수원시</h3>
+                <h3>📍일정: 2박 3일<hr></h3>
+            </div>
+        </div>
+
+        <div class="content-area">
+            <!--왼쪽 카드 배치-->
+            <div class="card-container">
+                <a href="https://naver.me/GagbbpJ2" class="link-card">
+                    <img src="imgs/meal-card.jpg" alt="1일차코스">
+                    <div class="card-body">
+                        <p><strong>🍴 수원 맛집 지도<br>수원 주민이 엄선한 맛집들만 모았습니다.</strong></p>
+                </div>      
+            </a>
+                <a href="https://naver.me/GLzaN0Y8" class="link-card">
+                    <img src="https://image.goodchoice.kr/affiliate/2025/02/11/67aaa9946ee2b.jpg" alt="1일차코스">
+                    <div class="card-body">
+                        <p><strong>🏡 수원 숙소 추천<br>분위기 좋은 감성 숙소를 찾고 계시나요?</strong></p>
+                </div>      
+            </a>
+                <a href="#" class="link-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Suwon_bus_13-4.jpg" alt="1일차코스">
+                    <div class="card-body">
+                        <p><strong>🚕 수원 교통편 소개<br>자차, 대중교통, 뚜벅이 모두 환영!</strong></p>
+                </div>      
+            </a>
+                <a href="#day1" class="card">
+                    <img src="imgs/day1-course.png" alt="1일차코스">
+                    <div class="card-body">
+                        <p><strong>🏁 1일차: 수원화성 외곽길 6KM 코스</strong></p>
+                    </div>
+                </a>
+                <a href="#day2" class="card">
+                    <img src="imgs/day2-course.png" alt="2일차코스">
+                    <div class="card-body">
+                        <p><strong>🏁 2일차: 만석거 저수지 2KM 코스</strong></p>
+                    </div>
+                </a>
+                <a href="#day3" class="card">
+                    <img src="imgs/day3-course.png" alt="3일차코스">
+                    <div class="card-body">
+                        <p><strong>🏁 3일차: 수원천~광교저수지 6KM 코스</strong></p>
+                    </div>
+                </a>            
+            </div>
+
+            <article>
+                <!--1일차-->
+                <div class="course-container" id="day1">
+                    <div class="title-1"><strong>🌇 1일차 | 행궁동 - 일몰 러닝 - 남문 통닭거리</strong></div>
+                    <div class="content-text"><p>이 코스는 수원의 대표적인 행궁동 일대를 중심으로 즐기는 여행이에요. 장안문과 화홍문, 용연, 방화수류정 등 역사 유적지를 천천히 둘러봐요.
+                        이후 오후에는 화성 외곽길을 따라 5.7km 러닝으로 수원의 야경을 만끽해요.<br>마지막엔 팔달문 통닭거리에서 저녁식사로 하루를 마무리해요.</p>
+                    </div>
+                    <div class="title-1"><strong>ℹ 추천 코스</strong></div>
+                        <div class="course-card-container">
+                        <div class="title-2"><strong>1️⃣ 점심 카페 투어</strong></div>
+                            <div class="img-container">
+                                <div class="course-card">
+                                    <img src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrOtMwTmAXpBUkosQSmIqss_JTez9zkhFUzPExcEiLLBrTEXBsMecSO7t4YXHdjJlfFyvnJDL168baDKnTpeTiqcuHL5xqGgruM1EHlOowM_oyJhJJoCfWrpNICMESGacyXwrdB=s1360-w1360-h1020-rw" 
+                                    alt="홍라드">
+                                    <div class="course-card-body">
+                                        <h4>☕ 홍라드</h4>
+                                        <p>스누피 브라우니가 귀여운 감성 카페</p>
+                                    </div>
+                                </div>
+                                <div class="course-card">
+                                    <img src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqDjrz2H6S209bNyQ0Woiex6NCaiVmT3zShLNLBzMlmhNXefkT4LFcSDlbW7H8JCoFDNJ1qDtSIMg8JHT1YSmIhOuT23MEsTq0B_pt6rdYOcYjLVkOhIedyA2Hp8DoD9dHBU5Vh=s1360-w1360-h1020-rw"
+                                    alt="정지영커피">
+                                    <div class="course-card-body">
+                                        <h4>☕ 정지영커피로스터즈</h4>
+                                        <p>카공하기 좋은 공간 넓은 카페</p>
+                                    </div>
+                                </div>
+                                <div class="course-card">
+                                    <img src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4noHAozGs8gfjFY-M2IHWl7YLLcOJXRK6cn4PzZDuyrlWJg-C6gHTbHro14nECmeIqVRyIz6SjJMhbGmnznuKQuF28DtqOkZgg-w-OGC4AsKRCa4stK9jOSgpdjz0DkP9boKeMT_kA=s1360-w1360-h1020-rw"
+                                    alt="누크녹">
+                                    <div class="course-card-body">
+                                        <h4>☕ 누크녹</h4>
+                                        <p>조용하고 모던한 느낌의 카페</p>
+                                    </div>
+                                </div>
+                                <div class="course-card">
+                                    <img src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nr0Fq6wiz315mMh4QIjCKbB011scfBBJH6GiVTKEAV-ejp2qCUXQIWQUjC5Vtdb-MSUlVf1kHRD36QglJwn2v7qkh1HaDBWHJ_3n7L1tkQaK4UPjrrIZ2HL59czyY2Q5s7MLwMt8v4coZw=s1360-w1360-h1020-rw"
+                                    alt="헤올커피">
+                                    <div class="course-card-body">
+                                        <h4>☕ 헤올커피로스터즈</h4>
+                                        <p>장안문이 한 눈에 보이는 뷰 맛집 카페</p>
+                                    </div>
+                                </div>
+                                <div class="course-card">
+                                    <img src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrgKOJEbUBbhvqWl7vve22iOutt0cTxO0_8T6ufEsYbPlVMp8QfHoVbsiFzrt1s1SZki1NmvcQ1frKAF1GBst1T7XIGTn9mi0dCwVn2LUNh9svtR8va-p3hlek9z3FcKMFDHKDGmA=s1360-w1360-h1020-rw" alt="츄플러스">
+                                    <div class="course-card-body">
+                                        <h4>☕ 츄플러스</h4>
+                                        <p>스페인식 츄러스가 정말 맛있는 카페</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="course-card-container">
+                            <div class="title-2"><strong>2️⃣행궁동 관광지 투어</strong></div>
+                            <div class="img-container">
+                                <div class="course-card">
+                                    <img src="https://blog.kakaocdn.net/dna/bssrN0/btrRJO12ItF/AAAAAAAAAAAAAAAAAAAAADLzNhFvZ3uOKBXOAgCG63A76_lnCHV27kedDq7O4GzZ/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1761922799&allow_ip=&allow_referer=&signature=ISbj03SvBBu4TQ2LVAmR4V0X0Yw%3D"
+                                    alt="방화수류정">
+                                    <div class="course-card-body">
+                                        <h4>#️⃣ 방화수류정</h4>
+                                        <div class="hashtag-container">
+                                            <span class="hashtag">#일몰맛집</span>
+                                            <span class="hashtag">#산책하기좋은</span>
+                                            <span class="hashtag">#분위기좋은</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="course-card">
+                                    <img src="https://cdn.tookyung.com/news/photo/202005/163008_132236_1055.jpg"
+                                    alt="화성행궁">
+                                    <div class="course-card-body">
+                                        <h4>#️⃣ 화성행궁</h4>
+                                        <div class="hashtag-container">
+                                            <span class="hashtag">#궁궐산책</span>
+                                            <span class="hashtag">#산책하기좋은</span>
+                                            <span class="hashtag">#분위기좋은</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="course-card">
+                                    <img src="https://dimg.donga.com/ugc/CDB/WOMAN/Article/5f/b6/17/ea/5fb617ea03c2d2738de6.jpg"
+                                    alt="벽화마을">
+                                    <div class="course-card-body">
+                                        <h4>#️⃣ 벽화마을</h4>
+                                        <div class="hashtag-container">
+                                            <span class="hashtag">#포토스팟</span>
+                                            <span class="hashtag">#선업튀</span>
+                                            <span class="hashtag">#아기자기한</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="course-card">
+                                    <img src="https://a.travel-assets.com/findyours-php/viewfinder/images/res70/248000/248826-Hwahongmun-Gate.jpg"
+                                    alt="화홍문">
+                                    <div class="course-card-body">
+                                        <h4>#️⃣ 화홍문</h4>
+                                        <div class="hashtag-container">
+                                            <span class="hashtag">#버드나무</span>
+                                            <span class="hashtag">#산책하기좋은</span>
+                                            <span class="hashtag">#포토스팟</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="course-card">
+                                    <img src="https://suma.suwon.go.kr/smarteditor/upload/20230420100730330.png"
+                                    alt="시립미술관">
+                                    <div class="course-card-body">
+                                        <h4>#️⃣ 수원시립미술관</h4>
+                                        <div class="hashtag-container">
+                                            <span class="hashtag">#모던한</span>
+                                            <span class="hashtag">#사색할수있는</span>
+                                            <span class="hashtag">#교양쌓기</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="course-card-container">
+                            <div class="title-2"><strong>3️⃣ 수원화성 외곽길 러닝</strong></div>
+                            <div class="content-text"><p>수원화성의 외곽길은 해가 질 때 제일 예뻐요. 일몰의 행궁동을 즐겨보세요!</p>
+                            </div>
+                            <div class="img-container">
+                                <img src="imgs/day1-course.png" alt="1일차코스" class="mini-img">
+                                <img src="imgs/day1-course2.png" alt="1일차코스" class="mini-img">
+                            </div>
+                        </div>
+                        <div class="course-card-container">
+                            <div class="title-2"><strong>4️⃣ 팔달문 통닭 거리</strong></div>
+                            <div class="content-text"><p>👮: 지금까지 이런 맛은 없었다. 이것은 갈비인가 통닭인가. 네, 수원 왕갈비 통닭입니다<br>영화 "극한직업"에서도 언급될 정도로 유명한 수원의 통닭! 러닝 후 시원한 맥주와 함께 즐겨보세요.
+                                통닭맛집은 왼쪽 지도에서 확인할 수 있습니다</p>
+                            </div>
+                            <div class="img-container">
+                                <img src="https://www.suwon.go.kr/common-upload/upload/visitsuwon/2018/6/1/7400ee6c-6e07-4d6b-bd12-5846281ec1a9.png" alt="통닭거리" class="mini-img">
+                                <img src="https://d12zq4w4guyljn.cloudfront.net/750_750_20230829051521_photo1_a00de67bf228.webp" alt="진미통닭" class="mini-img">
+                            </div>
+                        </div>
+                </div>
+                <!--2일차-->
+                <div class="course-container" id="day2">
+                    <div class="title-1"><strong>🐋 2일차 | 아침 러닝 - 소품샵 투어 - 광교 호수공원 고래런</strong></div>
+                    <div class="content-text"><p>둘째 날은 만석거 저수지에서 상쾌한 러닝과 산책으로 하루를 시작해요. 행궁동 카페에서 여유로운 모닝 커피를 즐기고, 감성 소품샵 투어로 시간을 보내요.
+                        <br>이후 광교로 이동해 갤러리아와 광교호수공원을 따라 9km 러닝을 즐겨요. 저녁에는 광교 호수공원 근처 맛집에서 하루를 마무리해요.</p>
+                    </div>
+                    <div class="title-1"><strong>ℹ 추천 코스</strong></div>
+                        <div class="course-card-container">
+                            <div class="title-2"><strong>1️⃣ 만석거 저수지 러닝</strong></div>
+                            <div class="content-text"><p>만석거 저수지는 정조 시대에 축조된 인공 저수지로, 수원의 대표적인 산책 명소예요. 잔잔한 수면과 둘레길이 어우러져 사계절 내내 아름다운 풍경을 자랑해요. <br>
+                                아침 러닝이나 낮 산책 코스로 인기가 많아 시민들의 휴식처로 사랑받고 있어요.</p>
+                            </div>
+                            <div class="img-container">
+                                <img src="imgs/day2-course.png" alt="2일차코스" class="mini-img">
+                                <img src="https://image.fnnews.com/resource/media/image/2023/03/29/202303291435450643_l.jpg" alt="2일차코스" class="mini-img">
+                            </div>
+                        </div>
+                        <div class="course-card-container">
+                            <div class="title-2"><strong>2️⃣행궁동 카페거리와 소품샵 투어</strong></div>
+                                <div class="content-text"><p>러닝을 마친 뒤에는 행궁동의 아늑한 카페에서 커피 한 잔으로 여유를 즐겨요. 따뜻한 분위기 속에서 담소를 나누며 러닝의 피로를 풀기에 딱 좋아요.
+                                    <br>이후에는 근처 소품샵을 둘러보며 감성 가득한 아이템들을 구경해요. 베어룸, 기글드제니, 페어리트랩 등 개성 있는 상점들이 하루를 더욱 특별하게 만들어줘요</p>
+                                <div class="img-container">
+                                    <div class="course-card">
+                                        <img src="https://lh3.googleusercontent.com/p/AF1QipMkjggs5nY7_d0KDO0oTrvqBIp17urKBnU1PkiX=s1360-w1360-h1020-rw" alt="카페도화">
+                                        <div class="course-card-body">
+                                            <h4>☕ 카페도화</h4>
+                                            <p>한옥의 고즈넉한 분위기 속에서 부드럽고 고소한 커피를 즐길 수 있는 감성 공간</p>
+                                        </div>
+                                    </div>
+                                    <div class="course-card">
+                                        <img src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nokiBsgCmGG94dz0NzmgwJXAJktj6VjcAcpF7RMUQyHsCNJP2u7iKDf1LfpDl-1YG_bVcv5lQrMsmjbGiExHDdBekve-1gtI07ubQp0EOC2B6lSn_FmSYetEFBg5oE-YCg89vVp9A=s1360-w1360-h1020-rw"
+                                        alt="아우토그라프커피">
+                                        <div class="course-card-body">
+                                            <h4>☕ 아우토그라프커피</h4>
+                                            <p>필터커피를 전문으로 하며 커피맛이 좋은 로스터리</p>
+                                        </div>
+                                    </div>
+                                    <div class="course-card">
+                                        <img src="https://mblogthumb-phinf.pstatic.net/MjAyMjEyMTNfODkg/MDAxNjcwODk5MTMwMjk0.-87kuCBxH3qYzUCbUZVcEto6uqo3kxBx7VL7zvxjHTEg.tyhvvIasZUbvz5IxlevSDK34A88DVxJWcsumF_JiqAcg.JPEG.zbxm914/output_738697743.jpg?type=w800"
+                                        alt="기글드제니">
+                                        <div class="course-card-body">
+                                            <h4>🧸 기글드제니</h4>
+                                            <p>키치하고 아기자기한 소품과 문구를 파는 작은 소품샵</p>
+                                        </div>
+                                    </div>
+                                    <div class="course-card">
+                                        <img src="https://mblogthumb-phinf.pstatic.net/MjAyMjEyMTNfNDAg/MDAxNjcwOTA3NzQ3NDYy.MDr-11t-eP4oIEf6iYWLKIMqrhNkimXr-7G_lFW12zEg.zEx-p6sAbOiUdX56zeZiMGnTCi5TQRctXy5hJ2WXbisg.JPEG.zbxm914/IMG_6306.jpg?type=w800"
+                                        alt="달빛행궁">
+                                        <div class="course-card-body">
+                                            <h4>🧸 달빛행궁</h4>
+                                            <p>깔끔하고 모던한 잡화를 파는 감성적인 샵</p>
+                                        </div>
+                                    </div>
+                                    <div class="course-card">
+                                        <img src="https://lh3.googleusercontent.com/p/AF1QipPOVVtPECbrEiykOiuiicM5Nj4ZtQvvuTS9oAiI=s1360-w1360-h1020-rw" alt="히얼유아">
+                                        <div class="course-card-body">
+                                            <h4>🧸 히얼유아</h4>
+                                            <p>키덜트 취향저격하는 샵</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="course-card-container">
+                            <div class="title-2"><strong>3️⃣광교 갤러리아 핫플레이스</strong></div>
+                            <div class="content-text"><p>광교 갤러리아에는 아쿠아플라넷 수족관을 비롯해 옥상공원과 하늘전망대 등 즐길 거리가 다양해요. 쇼핑 중에도 구름다리와 전망대에서 도심 전경을 감상하며 휴식을 취할 수 있어요. 키즈카페와 공연장도 있어 가족, 연인 모두에게 즐거운 시간을 선사해요.
+                                <br>광교 갤러리아까지는 버스를 타고 가면 한 번에 갈 수 있답니다.</p></div>
+                            <div class="img-container">
+                                <div class="course-card">
+                                    <img src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nojXGKqnlGo1KxJ5DL6JCqCsNN9GjiXdblus6ckldODHs4c73wyjEomOIspcQOtL0me70aIVLJRCHhTDo3MWtDJmEEXsjHsba7ACIj46jyCrnDE63KiQhysqEkDIstn2f-7sAJonQ=s1360-w1360-h1020-rw"
+                                    alt="아쿠아플라넷">
+                                    <div class="course-card-body">
+                                        <h4>🔥 아쿠아플라넷</h4>
+                                        <div class="hashtag-container">
+                                            <span class="hashtag">#데이트</span>
+                                            <span class="hashtag">#가족과함께</span>
+                                            <span class="hashtag">#다양한볼거리</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="course-card">
+                                    <img src="https://mblogthumb-phinf.pstatic.net/MjAyMzA3MTRfMjA1/MDAxNjg5MzI1NTQxMTkx.U5UcaeYxhCSrpq74yoYrjUQtUgBWem5rclC-hBeT4wYg.yOXFtWrq8yGwbwZRSRCbsJJZZ5c1jb91mgLWQLAldFgg.JPEG.vkfkddmswjd/20230629%EF%BC%BF140456.jpg?type=w800"
+                                    alt="노티드">
+                                    <div class="course-card-body">
+                                        <h4>🔥 노티드</h4>
+                                        <div class="hashtag-container">
+                                            <span class="hashtag">#달콤한디저트</span>
+                                            <span class="hashtag">#선물하기좋은</span>
+                                            <span class="hashtag">#유명베이커리</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="course-card">
+                                    <img src="https://mblogthumb-phinf.pstatic.net/MjAyNDExMTdfMTY5/MDAxNzMxODIzNDE0MDc0.Umrz9QCQwlGUQjyVoc6zzaFt8NAq9X55N4wQcvD1okIg.IZo8aHcCYYOl5q1RwJXI5O0r1HCoRdhqzZNtOloH8NAg.JPEG/IMG_0130.JPG?type=w800"
+                                    alt="포토존">
+                                    <div class="course-card-body">
+                                        <h4>🔥 스카이브릿지</h4>
+                                        <div class="hashtag-container">
+                                            <span class="hashtag">#포토스팟</span>
+                                            <span class="hashtag">#강심장</span>
+                                            <span class="hashtag">#전망대</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="course-card">
+                                    <img src="https://cfnimage.commutil.kr/phpwas/restmb_allidxmake.php?pp=002&idx=999&simg=2022031708305302917237391cf862236221998.jpg&nmt=18"
+                                    alt="고메이494">
+                                    <div class="course-card-body">
+                                        <h4>🔥 고메이 494</h4>
+                                        <div class="hashtag-container">
+                                            <span class="hashtag">#수원맛집</span>
+                                            <span class="hashtag">#총집합</span>
+                                            <span class="hashtag">#선물하기좋은</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="course-card">
+                                    <img src="https://mblogthumb-phinf.pstatic.net/MjAyMjA1MTFfMjg5/MDAxNjUyMjUyMzI2NDM1.Lpft-r6pB4aTHgt1sPDeEcLq4FHMuLQYLnN30o1EQAcg.VR94nwXJ09kwC1ZzQTmOvnHyxErBcDsPRDww3WI3W30g.JPEG.suwonloves/SE-404cd232-c93c-4da9-be17-64a0e6d86ecf.jpg?type=w800"
+                                    alt="전망대">
+                                    <div class="course-card-body">
+                                        <h4>🔥 프라이부르크전망대</h4>
+                                        <div class="hashtag-container">
+                                            <span class="hashtag">#포토스팟</span>
+                                            <span class="hashtag">#사색할수있는</span>
+                                            <span class="hashtag">#전망대</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="course-card-container">
+                            <div class="title-2"><strong>4️⃣ 광교호수공원 고래런</strong></div>
+                            <div class="content-text"><p>광교호수공원에서 즐기는 고래런은 GPS 아트를 활용해 고래 모양을 따라 달리는 특색 있는 러닝 코스예요. 총 거리 약 7~8km 정도로, 호수와 숲길을 잇는 경로를 지나며 경치도 만끽할 수 있어요.</p>
+                            </div>
+                            <div class="img-container">
+                                <img src="imgs/day2-course.png" alt="고래런" class="mini-img">
+                                <img src="https://apartment.suwonhotelsweb.com/data/Pics/OriginalPhoto/7768/776872/776872930/suwon-pic-1.JPEG" alt="호수공원" class="mini-img">
+                            </div>
+                        </div>
+                </div>
+                <!--3일차-->
+                <div class="course-container" id="day3">
+                    <div class="title-1"><strong>🏬 3일차 | 수원천 - 광교저수지 러닝 - 수원 스타필드</strong></div>
+                    <div class="content-text"><p>셋째 날은 수원천을 따라 광교저수지까지 약 6km 러닝으로 상쾌하게 시작해요. 아침식사 후 수원역과 화서역을 거쳐 수원 스타필드로 이동해 여유로운 쇼핑을 즐겨요.<br>별마당 도서관과 런던베이글뮤지엄, 바이닐 카페 등 다양한 공간을 둘러보며 여행의 마무리를 편하게 즐겨요.</p></div>
+                    <div class="title-1"><strong>ℹ 추천 코스</strong></div>
+                        <div class="course-card-container">
+                            <div class="title-2"><strong>1️⃣ 수원천 - 광교저수지 러닝</strong></div>
+                            <div class="content-text"><p>수원천은 광교산에서 시작해 수원 도심을 따라 흐르는 생태하천으로, 산책과 러닝 코스로 인기가 많아요. 복원된 구간을 따라 걷다 보면 화성과 자연이 어우러진 풍경을 즐길 수 있어요. 광교저수지는 수원의 대표적인 휴식 명소로, 잔잔한 수면과 숲길이 조화를 이루는 아름다운 장소예요.</p></div>
+                            <div class="img-container">
+                                <img src="imgs/day3-course.png" alt="3일차코스" class="mini-img">
+                                <img src="https://img.khan.co.kr/news/2012/04/18/l_2012041901002512000195441.jpg" alt="3일차코스" class="mini-img">
+                            </div>
+                        </div>
+                        <div class="course-card-container">
+                            <div class="title-2"><strong>2️⃣수원 스타필드</strong></div>
+                                <div class="content-text"><p>수원 스타필드는 지상 8층 규모의 복합문화공간으로, 쇼핑과 여가, 힐링을 한곳에서 즐길 수 있는 수원의 랜드마크예요. 별마당 도서관과 스몹, 반려동물 공간 등 다양한 체험 콘텐츠로 가족·연인 모두에게 인기예요.</p>
+                                <div class="img-container">
+                                    <div class="course-card">
+                                        <img src="https://img.allurekorea.com/allure/2024/01/style_65b72132690eb.jpg" alt="별마당도서관">
+                                        <div class="course-card-body">
+                                            <h4>🏫 별마당도서관</h4>
+                                            <p>공간의 경계를 허물어 자유롭게 이동하며 책과 분위기를 즐길 수 있는 오픈형 도서관</p>
+                                        </div>
+                                    </div>
+                                    <div class="course-card">
+                                        <img src="https://blog.kakaocdn.net/dna/bxFQcy/btsG1ytsZvU/AAAAAAAAAAAAAAAAAAAAAMRxIB2wuhu6MTUAxrbnEitEYAEAN3RUGkf7B1k6wyuR/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1761922799&allow_ip=&allow_referer=&signature=X9kiJ%2FnUP4TKvJDwK4qvEM58rwQ%3D"
+                                        alt="스몹">
+                                        <div class="course-card-body">
+                                            <h4>🏅 스몹</h4>
+                                            <p>짜릿하고 다양한 액티비티를 할 수 있는 실내 체육 공간</p>
+                                        </div>
+                                    </div>
+                                    <div class="course-card">
+                                        <img src="https://image.mom-mom.net/eyJrZXkiOiJwbGFjZXMvNjViNjIwYTc4NDIyNmI5MmVmZmNjNTMxLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwODAsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ=="
+                                        alt="바이닐">
+                                        <div class="course-card-body">
+                                            <h4>🎧 바이닐</h4>
+                                            <p>별마당 도서관 뷰를 감상하며 턴테이블로 자신만의 음악을 들을 수 있는 감성 공간</p>
+                                        </div>
+                                    </div>
+                                    <div class="course-card">
+                                        <img src="https://www.news1.kr/_next/image?url=https%3A%2F%2Fi3n.news1.kr%2Fsystem%2Fphotos%2F2024%2F5%2F10%2F6642132%2Fhigh.jpg&w=1920&q=75"
+                                        alt="런베뮤">
+                                        <div class="course-card-body">
+                                            <h4>🥯 런던베이글뮤지엄</h4>
+                                            <p>쫀득하면서도 촉촉한 식감이 특징인 식감 덕분에 방문객들이 입소문이 난 베이글 집</p>
+                                        </div>
+                                    </div>
+                                    <div class="course-card">
+                                        <img src="https://m.starfield.co.kr/cdn/nstfd/images/suwon/starfield/Visual-bg-entertm-Concord-img04.jpg" alt="콩코드">
+                                        <div class="course-card-body">
+                                            <h4>🏌️‍♀️ 콩코드</h4>
+                                            <p>실내 골프 연습장, GX룸, 수영장, 사우나 등 다양한 운동 시설을 갖춘 프리미엄 복합 피트니스 클럽</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="course-card-container">
+                            <div class="title-2"><strong>4️⃣ 광교호수공원 고래런</strong></div>
+                            <div class="content-text"><p>광교호수공원에서 즐기는 고래런은 GPS 아트를 활용해 고래 모양을 따라 달리는 특색 있는 러닝 코스예요. 총 거리 약 7~8km 정도로, 호수와 숲길을 잇는 경로를 지나며 경치도 만끽할 수 있어요.</p>
+                            </div>
+                            <div class="img-container">
+                                <img src="imgs/day3-course.png" alt="수원천런" class="mini-img">
+                                <img src="https://img.khan.co.kr/news/2012/04/18/l_2012041901002512000195441.jpg" alt="호수공원" class="mini-img">
+                            </div>
+                        </div>
+                </div>
+            </article>
+        </div>
+        <section class="social">
+            <h3>💬 여행자 반응</h3>
+            <div class="social-buttons">
+                <button class="like-btn">❤️ 좋아요 200</button>
+                <button class="comment-btn">💬 댓글 3</button>
+            </div>
+            <div class="comment-list">
+                <p><strong>송송희</strong> : 친구와 함께 수원에 러닝하러 가봐야겠어요!</p>
+                <p><strong>눈송이</strong> : 요즘 러닝에 빠졌는데 러닝을 주제로 여행 가는 것도 좋은 것 같아요.</p>
+                <p><strong>정약용</strong> : 화성행궁에서 달리고 고소한 커피를 마시면 기분이 좋을 것 같습니다.</p>
+
+            </div>
+            <div class="comment-form">
+                <textarea placeholder="댓글을 입력하세요..."></textarea>
+                <button class="submit-btn">등록</button>
+            </div>
+        </section>
+    </body>
+    <footer class="footer">
+        <p>© 2025 TOURABLE | WEBPROGRAMMING Team 6</p>
+    </footer>
+</html>
+
